@@ -1,0 +1,49 @@
+.input
+{
+    height: 35px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    background: none;
+    color: #fff;
+    padding: 0 5px;
+    outline: none;
+}
+.button
+{
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    background: none;
+    border: 1px solid whitesmoke;
+    margin-left: 10px;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: .3;
+    &:hover
+    {
+        background: whitesmoke;
+        color: #000;
+    }
+}
+.item
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: move;
+    min-width: 220px;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    button
+    {
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+    }
+}
