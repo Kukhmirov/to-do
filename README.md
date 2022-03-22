@@ -10,4 +10,4 @@ randomColor цвет стиков <br/>
 uuidv4 для генерации id <br/>
 Draggable перемещение элементов на экране <br/>
 
-[Visual](https://to-do-5029731pr-kukhmirov.vercel.app/)
+[Visual](https://to-do-five-gold.vercel.app/)
