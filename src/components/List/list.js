@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4} from 'uuid';
 import { randomColor } from 'randomcolor';
-import { ReactDOM } from 'react';
 import Draggable from 'react-draggable';
 import './list.scss'
 
@@ -17,8 +16,12 @@ function List () {
             const newItem = {
                 id: uuidv4(),
                 item: item,
-                color: randomColor({
+                v: false,
+                colorLight: randomColor({
                     luminosity: 'light'
+                }),
+                colorBright: randomColor({
+                    luminosity: 'bright'
                 }),
                 itemDefaultPos:{
                     x: 300,
@@ -37,7 +40,6 @@ function List () {
     };
 
     const delet = (id) => {
-        // const newArr = items.filter(item => item.id === id)
         setItems(items.filter(item => item.id !== id));
     }
 
@@ -50,6 +52,12 @@ function List () {
         if(e.key === 'Enter'){
             newItem();
         }
+    }
+
+    const vddd = (id) => {
+        let newArr = [...items];
+        newArr.map(item => item.id === id ? item.v = !item.v : item.v)
+        setItems(newArr)
     }
 
     return(
@@ -71,9 +79,15 @@ function List () {
                                         newPosition(data, index)
                                     }}
                                     >
-                            <div className="item" style={{background: item.color}}>
-                                {`${item.item}`}
-                                <button onClick={() => delet(item.id)} className='delete'>x</button>
+                            <div className="item" style={{background: item.colorLight}}>
+                                <p>{`${item.item}`}</p>
+                                <div className="items">
+                                    <div 
+                                        className='stars'
+                                        onClick={() => vddd(item.id)}
+                                        style={item.v ? {background: item.colorBright} : {background: '#fff'}}></div>
+                                    <button onClick={() => delet(item.id)} className='delete'>x</button>
+                                </div>
                             </div>
                         </Draggable>
                     )

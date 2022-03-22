@@ -33,10 +33,17 @@
     align-items: center;
     justify-content: space-between;
     cursor: move;
-    min-width: 220px;
+    width: 220px;
     color: #000;
     padding: 15px;
     border-radius: 5px;
+    p
+    {
+        height: 100%;
+        width: 150px;
+        margin: 0 auto;
+        word-wrap: break-word;
+    }
     button
     {
         border-radius: 50%;
@@ -45,5 +52,18 @@
         justify-content: center;
         border: none;
         cursor: pointer;
+    }
+    .items
+    {
+        position: relative;
+        display: flex;
+        .stars
+        {
+            width: 20px;
+            height: 20px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            margin-right: 5px;
+            cursor: pointer;
+        }
     }
 }
